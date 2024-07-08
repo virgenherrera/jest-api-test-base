@@ -3,17 +3,17 @@ import * as supertest from 'supertest';
 export class TestContext {
   private static instance: TestContext = null;
 
-  static async getInstance() {
+  static getInstance() {
     if (TestContext.instance) return TestContext.instance;
 
     const instance = new TestContext();
 
-    TestContext.instance = await instance.initContext();
+    TestContext.instance = instance.initContext();
 
     return TestContext.instance;
   }
 
-  request: supertest.SuperTest<supertest.Test> = null;
+  request: ReturnType<typeof supertest> = null;
 
   private get apiUrl(): string {
     const { API_URL } = process.env;
@@ -28,7 +28,7 @@ export class TestContext {
     return API_URL;
   }
 
-  private async initContext() {
+  private initContext() {
     const { apiUrl } = this;
 
     this.request = supertest(apiUrl);
