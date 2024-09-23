@@ -6,10 +6,10 @@ This is a basic template [Jest](https://jestjs.io/)  for testing APIs using Jest
 
 Before you start, make sure you have the following engines installed:
 
-- **Node.js**: `>=22.2.0 <23`
+- **Node.js**: `>=22.9.0 <23`
   - [Download Node.js](https://nodejs.org/)
 
-- **pnpm**: `>=9.5.0`
+- **pnpm**: `>=9.10.0`
   - Install pnpm with npm:
 
     ```bash
